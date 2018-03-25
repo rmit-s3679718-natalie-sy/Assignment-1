@@ -62,30 +62,5 @@ public class User {
 		userFriends.remove(userName);
 	}
 
-	/*
-	 * // implementation in user class // add friend - adult and child public
-	 * boolean addFriend(String friend) {
-	 * 
-	 * if (Friends.contains(friend)) { return false; } else { Friends.add(friend);
-	 * return true; }
-	 * 
-	 * }
-	 * 
-	 * // delete friend
-	 * 
-	 * public boolean removeFriend(String friend) { if(Friends.contains(friend)){
-	 * Friends.remove(friend); return true; }else { return false; } }
-	 * 
-	 * public Iterator<String> getFriends(){ return Friends.iterator(); }
-	 * 
-	 * public String toString() {
-	 * 
-	 * String sFriendsList = " "; boolean firstFriend = true; for(int i = 0; i <
-	 * Friends.size(); i++){ if(firstFriend) { sFriendsList = sFriendsList + " " +
-	 * Friends.get(i); firstFriend = false; }else{ sFriendsList = sFriendsList +
-	 * ", " + Friends.get(i); } }
-	 * 
-	 * return ""+userName+ " "+userStatus+":" + sFriendsList + " "; }
-	 */
-
+	
 }
