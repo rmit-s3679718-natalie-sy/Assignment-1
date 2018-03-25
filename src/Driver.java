@@ -10,7 +10,7 @@ public class Driver {
 	public final static int ADDFRIENDS = 5;
 	public final static int DELETEFRIENDS = 6;
 	public final static int QUIT = 7;
-	public final static int MAX_USERS = 50;
+	
 
 	// private UserDatabase userDatabase;
 	ArrayList<User> users = new ArrayList<User>();
@@ -20,15 +20,15 @@ public class Driver {
 	}
 
 	public void initialiseUsers() {
-		User Nat = new User("Natalie", "image1", "status1", 20);
-		User Alice = new User("Alice", "image2", "status2", 22);
-		User Bob = new User("Bob", "image3", "status3", 30);
-		User Don = new User("Don", "image4", "status4", 30);
+		User Alice = new User("Alice", "alice.jpg", "working", 20);
+		User Bob = new User("Bob", "bob.jpg", "retired", 67);
+		User Cathy = new User("Cathy", "cathy.jpg", "studying", 18);
+		User Don = new User("Don", "don.jpg", "part-time job", 27);
 
-		users.add(Nat);
-		users.add(Bob);
-		users.add(Don);
 		users.add(Alice);
+		users.add(Bob);
+		users.add(Cathy);
+		users.add(Don);
 	}
 
 	public static void main(String[] args) {
@@ -73,7 +73,7 @@ public class Driver {
 	public void listAll() {
 		System.out.println("list of users: ");
 		for( int index=0; index<users.size(); index++)
-			System.out.println(users.get(index).getUserName());
+			System.out.println("NAME: " + users.get(index).getUserName() + " " + "IMAGE: "+ users.get(index).getUserImage() + " " + "STATUS: " + users.get(index).getUserStatus() + " " + "AGE: " + users.get(index).getUserAge() + "" + "FRIENDS: " + users.get(index).userFriends);
 	}
 	
 	public void deleteUser() {
