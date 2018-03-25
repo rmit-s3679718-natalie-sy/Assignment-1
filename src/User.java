@@ -1,101 +1,91 @@
 import java.util.*;
 
 public class User {
-	
+
 	private String userName;
 	private String userImage;
 	private String userStatus;
 	private int userAge;
-	//public ArrayList<String> list = new ArrayList<String>();
-	public ArrayList<String> friendlist = new ArrayList<String>();
-	
+	public ArrayList<String> userFriends = new ArrayList<String>();
+
 	// constructor
 	public User(String userName, String image, String userStatus, int userAge) {
 		this.userName = userName;
-		this.userImage = userImage;
+		this.userImage = image;
 		this.userStatus = userStatus;
 		this.userAge = userAge;
 	}
-	
+
 	// accessors
-	public String getUserName() 
-	{ 
-		return userName; 
+	public String getUserName() {
+		return userName;
 	}
-	
-	public String getUserImage() 
-	{ 
-		return userImage; 
+
+	public String getUserImage() {
+		return userImage;
 	}
-	
-	public String getUserStatus() 
-	{ 
-		return userStatus; 
+
+	public String getUserStatus() {
+		return userStatus;
 	}
-	
-	public int getUserAge() 
-	{ 
-		return userAge; 
+
+	public int getUserAge() {
+		return userAge;
+	}
+
+	public ArrayList<String> getUserFriends() {
+		return userFriends;
 	}
 	
 	// setters
-	public void setUserName(String UserName) 
-	{ 
-		userName = UserName; 
+	public void setUserName(String UserName) {
+		userName = UserName;
+	}
+
+	public void setUserImage(String UserImage) {
+		userImage = UserImage;
+	}
+
+	public void setUserStatus(String UserStatus) {
+		userStatus = UserStatus;
+	}
+
+	public void setUserAge(int UserAge) {
+		userAge = UserAge;
 	}
 	
-	public void setUserImage(String UserImage) 
-	{ 
-		userImage = UserImage; 
+	public void addFriend(String userName) {
+		userFriends.add(userName);
 	}
 	
-	public void setUserStatus(String UserStatus) 
-	{ 
-		userStatus = UserStatus; 
+	public void removeFriend(String userName) {
+		userFriends.remove(userName);
 	}
-	
-	public void setUserAge(int UserAge) 
-	{ 
-		userAge = UserAge; 
-	}
-	
-	// implementation in user class
-	// add friend - adult and child 
-	public void addFriend()
-	{
-		
-		//friendList fList = new friendList();
-		Scanner input = new Scanner (System.in);
-		System.out.printf("What's the friend Name: ");
-        String friendName = input.next();
-        //friendlist.add("Bob"); // adds the friend to the array list
-        //System.out.println("new size: " + friendlist.size() );
-		
-        //for ( int j=0; j<friendlist.size(); j++ )
-          //  System.out.println("element " + j + ": " + friendlist.get(j) );
-	}
-	
-	// delete friend 
+
 	/*
-	public void removeFriend()
-	{
-		Scanner input = new Scanner (System.in);
-		System.out.printf("What's the friend Name: ");
-        String friendName = input.next();
-        friendlist.remove("Bob"); // adds the friend to the array list
-        System.out.println("new size: " + friendlist.size() );
-		
-        for ( int j=0; j<friendlist.size(); j++ )
-            System.out.println("element " + j + ": " + friendlist.get(j) );
-		
-	}
-	*/
-	
-	// print profile
-	// 
-//	public String toString()
-	// {
-	 //  return String.format( "Name: %s\nStudent Last Name: %s\nStudent Age: %s\nStudent", firstName, lastName, age);
-	 //}//end toString()
-		
+	 * // implementation in user class // add friend - adult and child public
+	 * boolean addFriend(String friend) {
+	 * 
+	 * if (Friends.contains(friend)) { return false; } else { Friends.add(friend);
+	 * return true; }
+	 * 
+	 * }
+	 * 
+	 * // delete friend
+	 * 
+	 * public boolean removeFriend(String friend) { if(Friends.contains(friend)){
+	 * Friends.remove(friend); return true; }else { return false; } }
+	 * 
+	 * public Iterator<String> getFriends(){ return Friends.iterator(); }
+	 * 
+	 * public String toString() {
+	 * 
+	 * String sFriendsList = " "; boolean firstFriend = true; for(int i = 0; i <
+	 * Friends.size(); i++){ if(firstFriend) { sFriendsList = sFriendsList + " " +
+	 * Friends.get(i); firstFriend = false; }else{ sFriendsList = sFriendsList +
+	 * ", " + Friends.get(i); } }
+	 * 
+	 * return ""+userName+ " "+userStatus+":" + sFriendsList + " "; }
+	 */
+
 }
