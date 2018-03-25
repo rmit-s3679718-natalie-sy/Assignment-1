@@ -1,24 +1,33 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * This class represents a Driver.  It displays a simple menu system.  It contains the following methods:
+ * main, initialise users, add users, find users, list user profiles, delete user, is friend, get user, 
+ * add friends, delete friends and run driver.
+ * @version 1 	28 Mar 2018
+ * @author 		Natalie Sy 
+ *
+ */
 public class Driver {
 
-	public final static int ADDUSER = 1;
-	public final static int FINDUSER = 2;
-	public final static int LISTUSER = 3;
-	public final static int DELETEUSER = 4;
-	public final static int ADDFRIENDS = 5;
-	public final static int DELETEFRIENDS = 6;
-	public final static int QUIT = 7;
+	public final static int ADDUSER = 1; //add a user 
+	public final static int FINDUSER = 2; //search if user exists in the record
+	public final static int LISTUSER = 3; //display all user profiles
+	public final static int DELETEUSER = 4; //delete a user
+	public final static int ADDFRIENDS = 5; //add connection between two users as friends 
+	public final static int DELETEFRIENDS = 6; //delete connection between two users as friends
+	public final static int QUIT = 7; //exit program
 	
 
-	// private UserDatabase userDatabase;
 	ArrayList<User> users = new ArrayList<User>();
 
 	public Driver() {
 		initialiseUsers();
 	}
-
+/**
+ * This method is to initialize users
+ */
 	public void initialiseUsers() {
 		User Alice = new User("Alice", "alice.jpg", "working", 20);
 		User Bob = new User("Bob", "bob.jpg", "retired", 67);
@@ -30,12 +39,18 @@ public class Driver {
 		users.add(Cathy);
 		users.add(Don);
 	}
-
+/**
+ * This is the main method
+ * @param args
+ */
 	public static void main(String[] args) {
 		Driver driver = new Driver();
 		driver.runDriver();
 	}
 	
+/**
+ * This method is used to add new user by entering name, image, status and age
+ */
 	public void addNewUser() {
 		Scanner input = new Scanner(System.in);
 		
@@ -51,7 +66,10 @@ public class Driver {
 		User user = new User(name, image, status, age);
 		users.add(user);
 	}
-	
+
+/**
+ * This method is used to find a user in the list
+ */
 	public void findUser() {
 		Scanner input = new Scanner(System.in);
 		boolean found = false;
@@ -69,13 +87,19 @@ public class Driver {
 		if (!found)
 			System.out.println("Not Found");
 	}
-	
+
+/**
+* This method is used to display name, image, status, age and friends of all users
+*/
 	public void listAll() {
 		System.out.println("list of users: ");
 		for( int index=0; index<users.size(); index++)
-			System.out.println("NAME: " + users.get(index).getUserName() + " " + "IMAGE: "+ users.get(index).getUserImage() + " " + "STATUS: " + users.get(index).getUserStatus() + " " + "AGE: " + users.get(index).getUserAge() + "" + "FRIENDS: " + users.get(index).userFriends);
+			System.out.println("NAME: " + users.get(index).getUserName() + " " + "IMAGE: "+ users.get(index).getUserImage() + " " + "STATUS: " + users.get(index).getUserStatus() + " " + "AGE: " + users.get(index).getUserAge() + " " + "FRIENDS: " + users.get(index).userFriends);
 	}
-	
+
+/**
+* This method is used to delete users
+*/
 	public void deleteUser() {
 		Scanner input = new Scanner(System.in);
 		boolean found = false;
@@ -95,6 +119,12 @@ public class Driver {
 			System.out.println("Not found");
 	}
 	
+/**
+ * This method is used to check if the person is friend of the user.  
+ * @param user1
+ * @param user2
+ * @return
+ */
 	public boolean isFriends(User user1, User user2) {
 		for( int i=0; i<user1.getUserFriends().size(); i++) {
 			if (user1.getUserFriends().get(i).equals(user2.getUserName()))
@@ -102,14 +132,22 @@ public class Driver {
 		}
 		return false;
 	}
-	
+
+/**
+ * This method is used to get list of users
+ * @param name
+ * @return
+ */
 	public User getUser(String name) {
 		for( int index=0; index<users.size(); index++)
 			if(users.get(index).getUserName().equals(name))
 				return users.get(index);
 		return null;
 	}
-	
+
+/**
+ * This method is used connect two users to be friends
+ */
 	public void addFriends() {
 		Scanner input = new Scanner(System.in);
 		User user1 = null, user2 = null;
@@ -132,7 +170,10 @@ public class Driver {
 		} else 
 			System.out.println("They are already friends.");
 	}
-	
+
+/**
+ * This method is used to delete friend connection between two users 
+ */
 	public void deleteFriends() {
 		Scanner input = new Scanner(System.in);
 		
@@ -149,10 +190,14 @@ public class Driver {
 		} else {
 			user1.removeFriend(user2.getUserName());
 			user2.removeFriend(user1.getUserName());
-			System.out.println("They not friends anymore.");
+			System.out.println("They are not friends anymore.");
 		}	
 	}
-	
+
+/**
+ * This method is to display the Mininet menu with the options to add user, find user, list users, delete user, add friends,
+ * remove friends and quit
+ */
 	public void runDriver() {
 		boolean more = true;
 		int option;

@@ -1,10 +1,17 @@
 
 import java.util.Scanner;
 
+/**
+ * This class contains get menu selection and display menu methods
+ * @version 1 	28 Mar 2018
+ * @author 		Natalie Sy 
+ *
+ */
+
 public class TextMenu {
 
 		public final static int DEFAULT = 1;
-		private int selection;
+		private int choice;
 		private String[] menuText;
 	
 	public TextMenu(String[] menuText) {
@@ -16,17 +23,18 @@ public class TextMenu {
 		Scanner input = new Scanner(System.in);
 		
 		displayMenu();
-		selection = input.nextInt();
-		if(selection < DEFAULT || menuText.length < selection) {
-			System.out.println("Your selection was invalid - using default");
+		choice = input.nextInt();
+		if(choice < DEFAULT || menuText.length < choice) {
+			System.out.println("Your choice was invalid - using default");
 		}
-		return selection;
+		return choice;
 	}
 	
 	public void displayMenu() {
-		System.out.println("\nEnter your selection: \n");
-		for (int index=0; index < menuText.length; index++)
-			System.out.println((index+1) + "." + menuText[index]);
+		System.out.println("MiniNet Menu");
+		System.out.println("======================================");
+		for (int i=0; i < menuText.length; i++)
+			System.out.println((i+1) + "." + menuText[i]);
 		System.out.print(">");
 	}
 

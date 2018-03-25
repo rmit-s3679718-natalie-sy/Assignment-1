@@ -1,12 +1,18 @@
 import java.util.*;
 
+/**
+ * This class represents a User.  It contains constructor, accessros, setters, add friend method and remove friend method
+ * @version 1 	28 Mar 2018
+ * @author 		Natalie Sy 
+ *
+ */
 public class User {
 
-	private String userName;
-	private String userImage;
-	private String userStatus;
-	private int userAge;
-	public ArrayList<String> userFriends = new ArrayList<String>();
+	private String userName; //Name of user
+	private String userImage; //Image of user
+	private String userStatus; //Status of user
+	private int userAge; //Age of user
+	public ArrayList<String> userFriends = new ArrayList<String>(); //Arraylist to store user friends
 
 	// constructor
 	public User(String userName, String image, String userStatus, int userAge) {
@@ -54,10 +60,18 @@ public class User {
 		userAge = UserAge;
 	}
 	
+	/**
+	 * This method adds friend to user profile
+	 * @param userName
+	 */
 	public void addFriend(String userName) {
 		userFriends.add(userName);
 	}
 	
+	/**
+	 * This method removes friend from user profile
+	 * @param userName
+	 */
 	public void removeFriend(String userName) {
 		userFriends.remove(userName);
 	}
