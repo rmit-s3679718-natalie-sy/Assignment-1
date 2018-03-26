@@ -13,16 +13,23 @@ public class TextMenu {
 		public final static int DEFAULT = 1;
 		private int choice;
 		private String[] menuText;
-	
+/**
+ * It sets the menu text as an array of String	
+ * @param menuText
+ */
 	public TextMenu(String[] menuText) {
 		this.menuText = menuText;
 		
 	}
-	
+/**
+ * This method displays the menu, then let user input selection.  If the choice entered is outside
+ * the valid range, the default value is returned.
+ * @return
+ */
 	public int getMenuSelection() {
 		Scanner input = new Scanner(System.in);
 		
-		displayMenu();
+		showMenu();
 		choice = input.nextInt();
 		if(choice < DEFAULT || menuText.length < choice) {
 			System.out.println("Your choice was invalid - using default");
@@ -30,7 +37,11 @@ public class TextMenu {
 		return choice;
 	}
 	
-	public void displayMenu() {
+/**
+ * This method displays the choices available in the menu
+ */
+	public void showMenu() {
+		System.out.println("======================================");
 		System.out.println("MiniNet Menu");
 		System.out.println("======================================");
 		for (int i=0; i < menuText.length; i++)

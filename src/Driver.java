@@ -39,14 +39,7 @@ public class Driver {
 		users.add(Cathy);
 		users.add(Don);
 	}
-/**
- * This is the main method
- * @param args
- */
-	public static void main(String[] args) {
-		Driver driver = new Driver();
-		driver.runDriver();
-	}
+
 	
 /**
  * This method is used to add new user by entering name, image, status and age
@@ -81,6 +74,8 @@ public class Driver {
 			if(users.get(index).getUserName().equals(name)) {
 				System.out.println("Found");
 				found = true;
+				System.out.println("NAME: " + users.get(index).getUserName() + " " + "IMAGE: "+ users.get(index).getUserImage() + " " + "STATUS: " + users.get(index).getUserStatus() + " " + "AGE: " + users.get(index).getUserAge() + " " + "FRIENDS: " + users.get(index).userFriends);
+
 			}
 		}
 		

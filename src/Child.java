@@ -1,3 +1,9 @@
+/**
+ * This subclass Child is an extension of the super class User class
+ * @version 1 	28 Mar 2018
+ * @author 		Natalie Sy 
+ *
+ */
 
 public class Child extends User{
 
