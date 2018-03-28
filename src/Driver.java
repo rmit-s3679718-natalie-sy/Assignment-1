@@ -19,7 +19,6 @@ public class Driver {
 	public final static int DELETEFRIENDS = 6; //delete connection between two users as friends
 	public final static int QUIT = 7; //exit program
 	
-
 	ArrayList<User> users = new ArrayList<User>();
 
 	public Driver() {
@@ -197,7 +196,7 @@ public class Driver {
 		boolean more = true;
 		int option;
 
-		String[] options = { "Add User", "Find user", "List users", "Delete User", "Add Friends", "Remove Friends", "Quit" };
+		String[] options = { "Add User", "Find User", "List Users", "Delete User", "Add Friends", "Remove Friends", "Quit" };
 		TextMenu myMenu = new TextMenu(options);
 
 		while (more) {
@@ -230,13 +229,10 @@ public class Driver {
 				}
 				case QUIT: {
 					more = false;
-					System.out.println("exited social network.");
+					System.out.println("You have exited the social network");
 					break;
 				}
 			}
 		}
 	}
-		
-
-
 }

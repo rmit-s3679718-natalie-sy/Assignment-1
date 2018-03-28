@@ -1,7 +1,7 @@
 import java.util.*;
 
 /**
- * This class represents a User.  It contains constructor, accessros, setters, add friend method and remove friend method
+ * This class represents a User.  It contains constructor, accessors, setters, add friend method and remove friend method
  * @version 1 	28 Mar 2018
  * @author 		Natalie Sy 
  *
